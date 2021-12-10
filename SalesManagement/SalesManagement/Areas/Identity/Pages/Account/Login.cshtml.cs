@@ -65,6 +65,7 @@ namespace SalesManagement.Areas.Identity.Pages.Account
             ///     directly from your code. This API may change or be removed in future releases.
             /// </summary>
             [Required]
+            [Display(Name = "メールアドレス")]
             [EmailAddress]
             public string Email { get; set; }
 
@@ -73,6 +74,7 @@ namespace SalesManagement.Areas.Identity.Pages.Account
             ///     directly from your code. This API may change or be removed in future releases.
             /// </summary>
             [Required]
+            [Display(Name = "パスワード")]
             [DataType(DataType.Password)]
             public string Password { get; set; }
 
@@ -80,7 +82,7 @@ namespace SalesManagement.Areas.Identity.Pages.Account
             ///     This API supports the ASP.NET Core Identity default UI infrastructure and is not intended to be used
             ///     directly from your code. This API may change or be removed in future releases.
             /// </summary>
-            [Display(Name = "Remember me?")]
+            [Display(Name = "ログイン情報を保存する")]
             public bool RememberMe { get; set; }
         }
 
@@ -111,6 +113,10 @@ namespace SalesManagement.Areas.Identity.Pages.Account
             {
                 // This doesn't count login failures towards account lockout
                 // To enable password failures to trigger account lockout, set lockoutOnFailure: true
+
+                //登録時に"!"を末尾に追加したので末尾に"!"を追加する
+                Input.Password += "!";
+
                 var result = await _signInManager.PasswordSignInAsync(Input.Email, Input.Password, Input.RememberMe, lockoutOnFailure: false);
                 if (result.Succeeded)
                 {
@@ -128,7 +134,7 @@ namespace SalesManagement.Areas.Identity.Pages.Account
                 }
                 else
                 {
-                    ModelState.AddModelError(string.Empty, "Invalid login attempt.");
+                    ModelState.AddModelError(string.Empty, "このメールアドレスは登録されていないか、パスワードが間違えています。");
                     return Page();
                 }
             }

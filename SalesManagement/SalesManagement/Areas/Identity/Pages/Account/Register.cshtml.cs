@@ -76,7 +76,7 @@ namespace SalesManagement.Areas.Identity.Pages.Account
             /// </summary>
             [Required]
             [EmailAddress]
-            [Display(Name = "Email")]
+            [Display(Name = "メールアドレス")]
             public string Email { get; set; }
 
             /// <summary>
@@ -84,9 +84,9 @@ namespace SalesManagement.Areas.Identity.Pages.Account
             ///     directly from your code. This API may change or be removed in future releases.
             /// </summary>
             [Required]
-            [StringLength(100, ErrorMessage = "The {0} must be at least {2} and at max {1} characters long.", MinimumLength = 6)]
+            [StringLength(100, ErrorMessage = "パスワードは{0}文字以上かつ{2}を1文字以上含める必要があります。", MinimumLength = 6)]
             [DataType(DataType.Password)]
-            [Display(Name = "Password")]
+            [Display(Name = "パスワード")]
             public string Password { get; set; }
 
             /// <summary>
@@ -94,8 +94,8 @@ namespace SalesManagement.Areas.Identity.Pages.Account
             ///     directly from your code. This API may change or be removed in future releases.
             /// </summary>
             [DataType(DataType.Password)]
-            [Display(Name = "Confirm password")]
-            [Compare("Password", ErrorMessage = "The password and confirmation password do not match.")]
+            [Display(Name = "パスワード再確認")]
+            [Compare("Password", ErrorMessage = "パスワードが一致していません。")]
             public string ConfirmPassword { get; set; }
         }
 
@@ -116,6 +116,10 @@ namespace SalesManagement.Areas.Identity.Pages.Account
 
                 await _userStore.SetUserNameAsync(user, Input.Email, CancellationToken.None);
                 await _emailStore.SetEmailAsync(user, Input.Email, CancellationToken.None);
+
+                //記号なしでパスワード指定したいので末尾に"!"を追加してアカウント登録をする
+                Input.Password += "!";
+
                 var result = await _userManager.CreateAsync(user, Input.Password);
 
                 if (result.Succeeded)
@@ -131,8 +135,8 @@ namespace SalesManagement.Areas.Identity.Pages.Account
                         values: new { area = "Identity", userId = userId, code = code, returnUrl = returnUrl },
                         protocol: Request.Scheme);
 
-                    await _emailSender.SendEmailAsync(Input.Email, "Confirm your email",
-                        $"Please confirm your account by <a href='{HtmlEncoder.Default.Encode(callbackUrl)}'>clicking here</a>.");
+                    await _emailSender.SendEmailAsync(Input.Email, "2段階認証メールを送信しました。",
+                        $"<a href='{HtmlEncoder.Default.Encode(callbackUrl)}'>ここをクリックして2段階認証を完了してください。</a>.");
 
                     if (_userManager.Options.SignIn.RequireConfirmedAccount)
                     {
