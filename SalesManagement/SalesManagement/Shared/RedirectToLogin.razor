@@ -1,0 +1,11 @@
+﻿@inject NavigationManager NavigationManager
+
+@code{
+    [Parameter]
+    public string? ReturnUrl { get; set; }
+    protected override void OnInitialized()
+    {
+        //ログインを実施していない場合はホームに遷移します。
+        NavigationManager.NavigateTo($"/", forceLoad: true);
+    }
+}
