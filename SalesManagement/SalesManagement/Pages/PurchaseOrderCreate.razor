@@ -1,0 +1,104 @@
+﻿@*@attribute [Authorize]*@
+@page "/PurchaseOrderCreate"
+
+<PageTitle>発注書作成</PageTitle>
+
+<div class="subject">
+    <hr width=100% size=5px />
+    <h1>発注書</h1>
+    <hr width=100% size=5px />
+</div>
+    
+
+<div>
+    <table class="OrderData">
+        <tr>
+            <u><td>発注年月日.@now.ToString("yyyy年MM月dd日")</td></u>
+        </tr>
+        <tr>
+            <u><td>発注書No.@GetNewOrderNo()</td></u>
+        </tr>
+    </table>
+
+    <div class="SendCompany">
+        <br />
+        <u><h4>AAAA株式会社 御中</h4></u>
+        <br />
+    </div>
+
+    <table class="reseaveAddress">
+        <tr>
+            <td><h4>株式会社BBB</h4></td>
+        </tr>
+        <tr>
+            <td><p>住所:東京都新宿1-1-1 AAAビル1階</p></td>
+        </tr>
+        <tr>
+            <td><p>担当者:山田太郎</p></td>
+        </tr>
+        <tr>
+            <td><p>TEL:03-0000-0000</p></td>
+        </tr>
+    </table>
+    <br />
+    <div id="p-sendText">
+        <p>以下の通り、発注いたします。</p>
+    </div>
+    <br />
+    <div id="tbl-bdr2">
+    <table>
+        <tr>
+            <td>合計金額</td>
+            <td>￥XXXXXX</td>
+        </tr>
+    </table>
+    </div>
+
+    <table class="NathanLimit">
+        <tr>
+            <td>納品期日</td>
+            <td>@now.ToString("yyyy年MM月dd日")</td>
+            <td>納品先</td>
+            <td>CCC株式会社</td>
+        </tr>
+    </table>
+
+    <table class="DataList">
+        <tr>
+            <th>商品コード</th>
+            <th>商品名</th>
+            <th>単位</th>
+            <th>数量</th>
+            <th>単価</th>
+            <th>合計金額</th>
+        </tr>
+        <tr>
+            <td>R1111</td>
+            <td>テスト</td>
+            <td>個</td>
+            <td>1</td>
+            <td>￥1,000</td>
+            <td>￥1,100</td>
+        </tr>
+    </table>
+
+    <button class="btn btn-primary" @onclick="IncrementCount">クリック</button>
+</div>
+
+@code {
+    private int currentCount = 0;
+
+    private DateTime now = DateTime.Now;
+
+    private void IncrementCount()
+    {
+        currentCount++;
+    }
+
+    private int GetNewOrderNo()
+    {
+        //ここにDBから現在の発注Noからインクリメントした数字を取得して返す関数を実装する。
+        return 1;
+    }
+
+}

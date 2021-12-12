@@ -1,0 +1,42 @@
+.subject[b-vgj01hpty8]{
+    text-align:center;
+}
+
+.OrderData[b-vgj01hpty8] {
+    margin: 0 0 0 auto;
+}
+
+.SendCompany[b-vgj01hpty8] {
+    font-weight: 700;
+    margin:0 0 0 100px;
+}
+
+.reseaveAddress[b-vgj01hpty8] {
+    margin: 0 0 0 auto;
+}
+
+.TotalAmount[b-vgj01hpty8] {
+    border: solid;
+    margin: 0 10px 10px 0;
+}
+
+.NathanLimit[b-vgj01hpty8] {
+    border-collapse: collapse;
+    margin: 0 10px 10px 0;
+}
+
+#tbl-bdr table[b-vgj01hpty8], #tbl-bdr td[b-vgj01hpty8], #tbl-bdr th[b-vgj01hpty8] {
+    border-collapse: collapse;
+    border: 1px solid #333;
+}
+
+#tbl-bdr2 table[b-vgj01hpty8], #tbl-bdr2 td[b-vgj01hpty8], #tbl-bdr2 th[b-vgj01hpty8] {
+    border: 1px solid;
+    width: 25%;
+    text-align: center;
+    margin: 0 0 0 100px;
+}
+
+#p-sendText[b-vgj01hpty8] {
+   margin: 0 0 0 100px;
+}

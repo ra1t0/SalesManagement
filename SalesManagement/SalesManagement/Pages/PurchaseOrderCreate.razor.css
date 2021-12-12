@@ -1,0 +1,42 @@
+﻿.subject{
+    text-align:center;
+}
+
+.OrderData {
+    margin: 0 0 0 auto;
+}
+
+.SendCompany {
+    font-weight: 700;
+    margin:0 0 0 100px;
+}
+
+.reseaveAddress {
+    margin: 0 0 0 auto;
+}
+
+.TotalAmount {
+    border: solid;
+    margin: 0 10px 10px 0;
+}
+
+.NathanLimit {
+    border-collapse: collapse;
+    margin: 0 10px 10px 0;
+}
+
+#tbl-bdr table, #tbl-bdr td, #tbl-bdr th {
+    border-collapse: collapse;
+    border: 1px solid #333;
+}
+
+#tbl-bdr2 table, #tbl-bdr2 td, #tbl-bdr2 th {
+    border: 1px solid;
+    width: 25%;
+    text-align: center;
+    margin: 0 0 0 100px;
+}
+
+#p-sendText {
+   margin: 0 0 0 100px;
+}

@@ -1,14 +1,12 @@
-﻿@attribute [Authorize]
-@page "/fetchdata"
+﻿@*@attribute [Authorize]*@
+@page "/SalesData"
 
 <PageTitle>売上データ</PageTitle>
 
 @using SalesManagement.Data
 @inject WeatherForecastService ForecastService
 
-<h1>Weather forecast</h1>
-
-<p>売上データを表示します</p>
+<h2>売上データ</h2>
 
 @if (forecasts == null)
 {
@@ -19,10 +17,13 @@ else
     <table class="table">
         <thead>
             <tr>
-                <th>Date</th>
-                <th>Temp. (C)</th>
-                <th>Temp. (F)</th>
-                <th>Summary</th>
+                <th>取引日時</th>
+                <th>発注部署</th>
+                <th>発注者</th>
+                <th>受注部署</th>
+                <th>受注者</th>
+                <th>案件名</th>
+                <th>発注書</th>
             </tr>
         </thead>
         <tbody>
