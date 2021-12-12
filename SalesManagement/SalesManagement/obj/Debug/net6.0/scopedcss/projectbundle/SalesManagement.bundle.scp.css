@@ -16,11 +16,6 @@
     margin: 0 0 0 auto;
 }
 
-.TotalAmount[b-vgj01hpty8] {
-    border: solid;
-    margin: 0 10px 10px 0;
-}
-
 .NathanLimit[b-vgj01hpty8] {
     border-collapse: collapse;
     margin: 0 10px 10px 0;
@@ -40,6 +35,26 @@
 
 #p-sendText[b-vgj01hpty8] {
    margin: 0 0 0 100px;
+}
+
+#tbl-NathanPeriodDay table[b-vgj01hpty8], #tbl-NathanPeriodDay td[b-vgj01hpty8], #tbl-NathanPeriodDay tr[b-vgj01hpty8] {
+    border-collapse: collapse;
+    border: 1px solid #333;
+    margin: 0 0 0 100px;
+}
+
+#tbl-mainList table[b-vgj01hpty8], #tbl-mainList tr[b-vgj01hpty8], #tbl-mainList th[b-vgj01hpty8], #tbl-mainList td[b-vgj01hpty8] {
+    border-collapse: collapse;
+    border: 1px solid #333;
+    margin: 0 0 0 100px;
+}
+
+#tbl-mainList th[b-vgj01hpty8], #tbl-mainList td[b-vgj01hpty8] {
+    border-collapse: collapse;
+}
+
+.bg-lightgray[b-vgj01hpty8]{
+    background: lightgray;
 }
 /* _content/SalesManagement/Shared/MainLayout.razor.rz.scp.css */
 .page[b-ceeten6mrx] {

@@ -15,11 +15,6 @@
     margin: 0 0 0 auto;
 }
 
-.TotalAmount {
-    border: solid;
-    margin: 0 10px 10px 0;
-}
-
 .NathanLimit {
     border-collapse: collapse;
     margin: 0 10px 10px 0;
@@ -39,4 +34,24 @@
 
 #p-sendText {
    margin: 0 0 0 100px;
+}
+
+#tbl-NathanPeriodDay table, #tbl-NathanPeriodDay td, #tbl-NathanPeriodDay tr {
+    border-collapse: collapse;
+    border: 1px solid #333;
+    margin: 0 0 0 100px;
+}
+
+#tbl-mainList table, #tbl-mainList tr, #tbl-mainList th, #tbl-mainList td {
+    border-collapse: collapse;
+    border: 1px solid #333;
+    margin: 0 0 0 100px;
+}
+
+#tbl-mainList th, #tbl-mainList td {
+    border-collapse: collapse;
+}
+
+.bg-lightgray{
+    background: lightgray;
 }

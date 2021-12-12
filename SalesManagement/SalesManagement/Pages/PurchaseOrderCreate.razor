@@ -53,17 +53,20 @@
         </tr>
     </table>
     </div>
-
-    <table class="NathanLimit">
-        <tr>
-            <td>納品期日</td>
-            <td>@now.ToString("yyyy年MM月dd日")</td>
-            <td>納品先</td>
-            <td>CCC株式会社</td>
-        </tr>
-    </table>
-
-    <table class="DataList">
+    <br />
+    <div id="tbl-NathanPeriodDay">
+        <table>
+            <tr>
+                <td class="bg-lightgray">納品期日</td>
+                <td>@now.ToString("yyyy年MM月dd日")</td>
+                <td class="bg-lightgray">納品先</tdbg-lightgray>
+                <td>CCC株式会社</td>
+            </tr>
+        </table>
+    </div>
+    <br />
+    <div id="tbl-mainList">
+    <table>
         <tr>
             <th>商品コード</th>
             <th>商品名</th>
@@ -81,7 +84,8 @@
             <td>￥1,100</td>
         </tr>
     </table>
-
+    </div>
+    <br />
     <button class="btn btn-primary" @onclick="IncrementCount">クリック</button>
 </div>
 
@@ -100,5 +104,7 @@
         //ここにDBから現在の発注Noからインクリメントした数字を取得して返す関数を実装する。
         return 1;
     }
+
+    private 
 
 }
